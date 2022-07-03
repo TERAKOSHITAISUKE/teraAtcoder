@@ -22,3 +22,6 @@ if mod < 10:
 if 0 <= div <= 2:
     h = 21 + div
     print(str(h)+":"+str(mod))
+
+
+'''[URL](https://atcoder.jp/contests/abc258/submissions/32948468)'''
