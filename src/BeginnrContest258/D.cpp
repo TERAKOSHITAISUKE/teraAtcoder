@@ -1,25 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i, n) for (int i = 0; i < (n); ++i)
+using ll = long long;
 
 int main()
 {
-    int n, q;
-    cin >> n >> q;
-    string s;
-    cin >> s;
-    int p = 0;
-    rep(qi, q)
+    int n, x;
+    cin >> n >> x;
+    vector<int> a(n), b(n);
+    rep(i, n) cin >> a[i] >> b[i];
+    ll ans = 2e18;
+    ll s = 0, l = 1e18;
+    rep(r, n)
     {
-        int type, x;
-        cin >> type >> x;
-        if (type == 1)
-        {
-            p = (p - x + n) % n;
-        }
-        else
-        {
-            cout << s[(p + x - 1) % n] << endl;
-        }
+        s += a[r] + b[r];
+        l = min<ll>(l, b[r]);
+        if (x < r + 1)
+            continue;
+        ll now = s + l * (x - r - 1);
+        ans = min(ans, now);
     }
+    cout << ans << endl;
     return 0;
+}

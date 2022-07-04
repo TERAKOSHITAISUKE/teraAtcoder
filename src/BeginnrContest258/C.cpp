@@ -19,7 +19,7 @@ int main()
         }
         else
         {
-            cout << s[(p + x - 1) % n] << endl;
+            cout << s[(p + x - 1) % n] << '\n';
         }
     }
     return 0;
